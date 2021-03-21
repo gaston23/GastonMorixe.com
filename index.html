@@ -22,20 +22,9 @@
 
       body {
         font-family: monospace;
-        padding: 30px;
+        padding: 1.75rem;
         align-items: center;
         justify-content: center;
-      }
-
-      header h1 {
-        text-transform: uppercase;
-        font-size: 1em;
-        letter-spacing: 0em;
-        color: rgb(0, 0, 0);
-      }
-
-      header {
-        margin-bottom: 1.5em;
       }
 
       a:link,
@@ -50,6 +39,36 @@
       a:active {
         color: white;
         background: gray;
+      }
+
+      #content {
+        display: flex;
+        flex-direction: column;
+        max-width: max-content;
+      }
+
+      main {
+        display: flex;
+      }
+
+      header {
+        margin-bottom: 1.5em;
+        display: flex;
+      }
+      header h1 {
+        text-transform: uppercase;
+        font-size: 1em;
+        letter-spacing: 0em;
+        color: rgb(0, 0, 0);
+        width: 100%;
+        display: inline-flex;
+      }
+
+      main {
+        display: flex;
+      }
+      main > * + * {
+        margin-left: 1.5rem;
       }
 
       nav {
@@ -69,45 +88,54 @@
         height: 200px;
         display: flex;
       }
-      main {
-        display: flex;
-      }
-      main > * + * {
-        margin-left: 1.5rem;
-      }
+
       footer {
         display: flex;
         margin-top: 1.5rem;
       }
 
       @media only screen and (max-width: 400px) {
+        body {
+          font-size: 16px;
+          justify-content: flex-start;
+        }
+
         main {
           flex-direction: column;
         }
-        body {
-          /* background: red; */
+
+        main > * + * {
+          margin-left: unset;
+          margin-top: 1.75rem;
         }
-        nav {
-          margin-top: 1.5em;
+
+        nav > * + * {
+          margin-top: 1em;
+        }
+
+        footer {
+          margin-top: 1.75rem;
         }
       }
     </style>
   </head>
   <body>
-    <header>
-      <h1>Gaston Morixe</h1>
-    </header>
-    <main>
-      <div id="photo"></div>
-      <nav>
-        <a href="https://theportfolio.gastonmorixe.com">portfolio</a>
-        <a href="https://linkedin.com/in/gastonmorixe">linkedin</a>
-        <a href="https://dribbble.com/gastonmorixe">dribbble</a>
-        <a href="https://twitter.com/gastonmorixe">twitter</a>
-        <a href="https://instagram.com/gastonmorixe">instagram</a>
-        <a href="mailto:gaston@gastonmorixe.com">gaston@gastonmorixe.com</a>
-      </nav>
-    </main>
-    <footer>NYC US / 2021</footer>
+    <div id="content">
+      <header>
+        <h1>Gaston Morixe</h1>
+      </header>
+      <main>
+        <div id="photo"></div>
+        <nav>
+          <a href="https://theportfolio.gastonmorixe.com">portfolio</a>
+          <a href="https://linkedin.com/in/gastonmorixe">linkedin</a>
+          <a href="https://dribbble.com/gastonmorixe">dribbble</a>
+          <a href="https://twitter.com/gastonmorixe">twitter</a>
+          <a href="https://instagram.com/gastonmorixe">instagram</a>
+          <a href="mailto:gaston@gastonmorixe.com">gaston@gastonmorixe.com</a>
+        </nav>
+      </main>
+      <footer>NYC US / 2021</footer>
+    </div>
   </body>
 </html>
